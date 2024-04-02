@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+<h1>Confirm delete</h1>
+<table>
+  <tr>
+    <td>Id</td> <td th:text="${movie.id}" ></td>
+  </tr>
+  <td>Release year</td> <td th:text="${movie.releaseYear}"></td>
+  <tr>
+  <td>Description</td> <td th:text ="${movie.description}"></td></tr>
+  <tr>
+  <td>Tags</td> <td th:text ="${movie.tags}"></td>
+  </tr>
+  <tr>
+    <form action="/delete" method="post">
+      <input type="hidden" name="id" th:value="${movie.id}">
+      <button type="submit"> Delete</button>
+    </form>
+    <form action="/" method="get">
+    <button>Cancel</button>
+    </form>
+  </tr>
+</table>
+
+</body>
+</html>

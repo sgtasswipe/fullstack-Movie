@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+
+<h1> Movie Fun</h1>
+<form action="/new" method="get">
+<button type="submit" > new </button>
+</form>
+
+<table>
+    <thead>
+    <td>ID    </td> <td>Title</td> <td> Release year</td> <td>Description</td> <td>Tags</td> <td> Update</td>  <td>Delete</td>  </thead>
+    <tr th:each ="movie :  ${movies} ">
+        <td th:text = "${movie.id}"> </td>
+        <td th:text = "${movie.title}"> </td>
+        <td th:text = "${movie.releaseYear}"> </td>
+        <td th:text = "${movie.description}"> </td>
+        <td th:text = "${movie.tags}"> </td>
+
+        <td>
+           <form action ="/prepare_update" method ="get" >
+            <input type="hidden" name="id" th:value="${movie.id}" >
+            <button type="submit" > Update </button>
+            </form>
+        </td>
+        <td> <form action ="/confirm_delete" method ="get" >
+            <input type="hidden" name="id" th:value="${movie.id}" >
+            <button type="submit" > Delete </button>
+        </form>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

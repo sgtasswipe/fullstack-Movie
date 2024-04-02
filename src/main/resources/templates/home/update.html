@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Update Movie</h1>
+
+<table>
+    <tr>
+<form action="/update" method="post">
+
+            <td>Title</td> <td><input type="text" name="title" th:value="${movie.title}"></td>
+    <br>
+                <td>Release year</td> <td><input type="text" name="releaseYear" th:value="${movie.releaseYear}"></td>
+    <br>
+    <br>
+                <td>Description</td> <td><input type="text" name="description" th:value="${movie.description}"></td>
+    <br>
+    <br>
+                <td>Tags</td> <td><input type="text" name="tags" th:value="${movie.tags}"></td>
+    <br>
+    <br>
+                <input type="hidden" name="id" th:value="${movie.id}" >
+                <td><button type="submit">Save</button></td>
+
+        </form>
+
+        <br>
+        <form action="/" method="get" >
+            <button>Cancel</button>
+        </form>
+    </tr>
+</table>
+</body>
+</html>
